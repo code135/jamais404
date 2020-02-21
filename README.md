@@ -4,6 +4,7 @@
 
 Combien d'erreurs 404 arriverez-vous à trouver ?
 
+
 Le but du projet est de créer une application web qui permet à l'utilisateur de chercher des erreurs 404. Si une page inexistante est trouvée, elle est automatiquement ajoutée à la base de données et plus personne ne pourra trouver cette même erreur 404. Le but des utilisateurs est donc de trouver un maximum de pages d'erreur 404 avant que quelqu'un d'autre ne les trouve.
 
 ## Cahier des charges
