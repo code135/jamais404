@@ -1,0 +1,24 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-Jamais404Application<jamais404>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.example.demo.Jamais404Application",
+            "projectName": "jamais404",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-Jamais404Application<jamais404>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.jamais404.Jamais404Application",
+            "projectName": "jamais404",
+            "args": ""
+        }
+    ]
+}
