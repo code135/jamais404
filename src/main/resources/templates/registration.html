@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
   <head>
       <meta charset="utf-8">
       <title>Create an account</title>
@@ -10,7 +10,7 @@
 
     <div class="container">
 
-        <form method="POST" modelAttribute="userForm" class="form-signin">
+        <form method="POST" modelAttribute="userForm" action="/registration" class="form-signin">
             <h2 class="form-signin-heading">Create your account</h2>
             <spring:bind path="username">
                 <div class="form-group ${status.error ? 'has-error' : ''}">
@@ -34,7 +34,6 @@
                     <errors path="passwordConfirm"></errors>
                 </div>
             </spring:bind>
-
             <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
         </form>
 

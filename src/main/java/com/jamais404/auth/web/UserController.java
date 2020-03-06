@@ -33,14 +33,15 @@ public class UserController {
         userValidator.validate(userForm, bindingResult);
 
         if (bindingResult.hasErrors()) {
+            System.out.println("-------------------------------------------------------------------------------errors");
             return "registration";
         }
-
+        System.out.println("------------------------------------------------------------------------------going to save");
         userService.save(userForm);
 
         securityService.autoLogin(userForm.getUsername(), userForm.getPasswordConfirm());
 
-        return "redirect:/home";
+        return "redirect:/welcome";
     }
 
     @GetMapping("/login")
