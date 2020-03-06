@@ -1,0 +1,40 @@
+
+.main {
+    padding: 4em 0;
+}
+
+section {
+    padding: 2em 0;
+}
+
+.main-title {
+    font-size: 4em;
+    margin: 0 0 1em 0;
+}
+.subtitle {
+    font-size: 3em;
+    margin: 0 0 1em 0;
+}
+
+.text {
+    font-size: 1.4em;
+    margin: 0 0 0.5em 0;
+}
+
+#search-input {
+    font-size: 2.5em;
+    text-align: center;
+    height: auto;
+    border: 2px solid #999;
+    border-radius: 1px;
+    padding: 12px 10px;
+    box-sizing: border-box;
+}
+#search-input:focus,
+#search-input.invalid {
+    box-shadow: none;
+}
+form .btn {
+    font-size: 1.2em;
+    width: 100%;
+}
