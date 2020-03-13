@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+  <title>Jamais404</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  
+  <!-- STYLES -->
+  <link rel="stylesheet" th:href="@{/css/app.css}">
+  <link rel="stylesheet" th:href="@{/css/materialize.min.css}">
+
+</head>
+<body>
+
+    <header></header>
+
+    <main class="main">
+        <div class="container">
+            <div class="center">
+
+                <h1 class="main-title" th:utext="${url}"></h1>
+
+                <section>
+                    <p class="text">This URL has been found by <a href="" th:utext="${username}"></a> on <span th:utext="${datetime}"></span></p>
+                </section>
+
+                <h2 class="subtitle">Don't give up !</h2>
+
+                <form id="form-search-page" action="search" method="POST">
+
+                    <div class="input-field">
+                        <input id="search-input" name="query" type="text" class="validate" placeholder="Search URL..." autocomplete="off" required>
+                    </div>
+
+                    <button class="btn btn-large waves-effect waves-light deep-purple" type="submit">SEARCH</button>
+
+                </form>
+
+            </div>
+        </div>
+    </main>
+
+    <footer></footer>
+
+    <!-- SCRIPTS -->
+    <script th:src="@{/js/materialize.min.js}"></script>
+
+</body>
+</html> 
