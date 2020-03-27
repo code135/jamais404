@@ -1,24 +1,32 @@
  pipeline {
     agent any
     stages {
-        stage('Build') {
-            steps{
-                echo "Build"
-            }
-        }
-        stage('Print all environnement'){
-            steps{
+        stage('Echo Sample') {
+            steps {
+                echo "ECHO SAMPLE"
                 sh '(printenv)'
             }
         }
-        stage('Test') {
-            steps{
+        stage('Build') {
+            agent {
+                docker {
+                    image 'maven:3.6.3-jdk-11-slim'
+                }
+            }
+            steps {
                 echo "Build"
+                sh '(cd ./jamais404/; mvn clean package)'
+                stash name: "app", includes: "**"
+            }
+        }
+        stage('Test') {
+            steps {
+                echo "Test: TODO"
             }
         }
         stage('Deploy') {
-            steps{
-                echo "Build"
+            steps {
+                echo "Deploy: TODO"
             }
         }
     }
