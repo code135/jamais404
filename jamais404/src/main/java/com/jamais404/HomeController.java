@@ -5,6 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class HomeController {
@@ -23,9 +24,10 @@ public class HomeController {
 	 * @return
 	 */
 	@RequestMapping(value = "/search", method = RequestMethod.POST)
-	public String search() {
-		// TODO
-		return "home";
+	public ModelAndView search(@RequestParam String query) {
+		String redirectUrl = "redirect:/" + query;
+		
+		return new ModelAndView(redirectUrl);
 	}
 
 	/**
