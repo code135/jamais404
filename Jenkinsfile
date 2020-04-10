@@ -20,8 +20,13 @@
             }
         }
         stage('Test') {
+            agent {
+                docker {
+                    image 'maven:3.6.3-jdk-11-slim'
+                }
+            }
             steps {
-                echo "Test: TODO"
+                sh 'mvn test'
             }
         }
         stage('Deploy') {
