@@ -101,3 +101,5 @@ hs_err_pid*
 # Custom
 application.properties
 .DS_Store
+desktop.ini
+/target
