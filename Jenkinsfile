@@ -26,7 +26,7 @@
                 }
             }
             steps {
-                sh 'mvn test'
+                sh '(cd ./jamais404/; mvn test)'
             }
         }
         stage('Deploy') {
