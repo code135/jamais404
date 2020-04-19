@@ -1,5 +1,8 @@
 package com.jamais404;
 
+import java.util.Arrays;
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,7 +18,12 @@ public class HomeController {
 	 * @return
 	 */
 	@RequestMapping(value = "/")
-	public String home() {
+	public String home(Model model) {
+        
+        //TODO
+
+        model.addAttribute("active", "TODO");
+
 		return "home";
 	}
 
@@ -38,9 +46,17 @@ public class HomeController {
 	@RequestMapping(value = "/user")
 	public String user(Model model, @RequestParam String username) {
 		
-		// TODO
+        // TODO
+        
+        List<String> pages = List.of(
+            "page1",
+            "page2",
+            "page3"
+        );
+
 		model.addAttribute("username", username);
-		model.addAttribute("nbFound", "1");
+        model.addAttribute("nbFound", pages.size());
+        model.addAttribute("pages", pages);
 
 		return "user";
 	}

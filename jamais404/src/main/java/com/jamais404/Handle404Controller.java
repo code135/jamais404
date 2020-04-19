@@ -21,10 +21,11 @@ public class Handle404Controller implements ErrorController {
     public String handleError(Model model) {
         
         //FIXME: temporary
-        boolean new404 = false;
+        boolean new404 = true;
 
         //FIXME: temporary
         model.addAttribute("url", "/test");
+        model.addAttribute("username", "admin");
 
         // New 404 error found
         if (new404) {
@@ -32,7 +33,6 @@ public class Handle404Controller implements ErrorController {
         }
 
         //FIXME: temporary
-        model.addAttribute("username", "admin");
         model.addAttribute("datetime", "13.03.2020 11:06");
 
         // Already found 404 error
