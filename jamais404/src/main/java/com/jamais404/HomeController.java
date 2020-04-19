@@ -1,6 +1,5 @@
 package com.jamais404;
 
-import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.stereotype.Controller;
@@ -47,6 +46,8 @@ public class HomeController {
 	public String user(Model model, @RequestParam String username) {
 		
         // TODO
+
+        model.addAttribute("active", "TODO");
         
         List<String> pages = List.of(
             "page1",

@@ -1,11 +1,12 @@
 package com.jamais404;
 
+import javax.servlet.RequestDispatcher;
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.boot.web.servlet.error.ErrorController;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseStatus;
 
 @Controller
 public class Handle404Controller implements ErrorController {
@@ -14,17 +15,21 @@ public class Handle404Controller implements ErrorController {
      * Handles every route different from the ones registered in
      * the HomeController.
      * @param model
+     * @param request
      * @return
      */
     @RequestMapping("/error")
-    @ResponseStatus(HttpStatus.OK)
-    public String handleError(Model model) {
-        
+    public String handleError(Model model, HttpServletRequest request) {
+        // Gets the URI that triggered the 404 error (to avoid /error)
+        String originalUri = request.getAttribute(RequestDispatcher.FORWARD_REQUEST_URI).toString();
+
         //FIXME: temporary
         boolean new404 = true;
 
+        model.addAttribute("active", "TODO");
+
         //FIXME: temporary
-        model.addAttribute("url", "/test");
+        model.addAttribute("url", originalUri);
         model.addAttribute("username", "admin");
 
         // New 404 error found

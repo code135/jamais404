@@ -33,7 +33,7 @@
         <div class="container">
             <div class="center">
 
-                <h1 class="main-title" th:utext="${url}"></h1>
+                <h1 class="main-title word-break" th:utext="${url}"></h1>
 
                 <section>
                     <p class="text">This URL has been found by <a th:href="@{'user?username=' + ${username}}" class="pink-text text-darken-2" th:utext="${username}"></a> on <span th:utext="${datetime}"></span></p>

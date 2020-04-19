@@ -28,6 +28,10 @@ a:hover {
     color: #e91e63 !important;
 }
 
+.word-break {
+    word-break: break-all;
+}
+
 .nav-wrapper a:hover {
     background: #fff;
     color: #e91e63;
