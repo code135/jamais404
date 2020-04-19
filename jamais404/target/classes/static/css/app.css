@@ -21,6 +21,38 @@ section {
     margin: 0 0 0.5em 0;
 }
 
+a {
+    transition: all 0.3s;
+}
+a:hover {
+    color: #e91e63 !important;
+}
+
+.nav-wrapper a:hover {
+    background: #fff;
+    color: #e91e63;
+}
+.nav-wrapper .brand-logo.left {
+    left: 0 !important;
+    padding: 0 0.5em;
+}
+.nav-wrapper #nav-mobile > li > a {
+    padding: 0 1.5em;
+}
+.nav-wrapper #nav-mobile > li button {
+    background: #e91e63 !important;
+    color: #fff;
+    border: none;
+    padding: 0 1.5em;
+    display: block;
+    transition: all 0.3s;
+}
+.nav-wrapper #nav-mobile > li button:hover {
+    background: #fff  !important;
+    color: #e91e63  !important;
+    cursor: pointer;
+}
+
 #search-input {
     font-size: 2.5em;
     text-align: center;
@@ -37,4 +69,11 @@ section {
 form .btn {
     font-size: 1.2em;
     width: 100%;
+}
+
+.list-pages-found {
+    font-size: 1.3em;
+}
+.list-pages-found > li {
+    padding: 0.2em 0;
 }

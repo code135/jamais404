@@ -2,17 +2,32 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-  <title>Jamais404</title>
-  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Jamais404</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   
-  <!-- STYLES -->
-  <link rel="stylesheet" th:href="@{/css/app.css}">
-  <link rel="stylesheet" th:href="@{/css/materialize.min.css}">
+    <!-- STYLES -->
+    <link rel="stylesheet" th:href="@{/css/app.css}">
+    <link rel="stylesheet" th:href="@{/css/materialize.min.css}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 </head>
 <body>
 
-    <header></header>
+    <header>
+        <nav>
+            <div class="nav-wrapper pink white-text">
+                <a href="/" class="left brand-logo">Jamais 404</a>
+                <ul id="nav-mobile" class="right">
+                    <li><a th:href="@{'user?username=' + ${active}}"><i class="material-icons">account_circle</i></a></li>
+                    <li>
+                        <form method="POST" action="/logout">
+                            <button type="submit"><i class="material-icons">exit_to_app</i></button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
 
     <main class="main">
         <div class="container">
@@ -21,10 +36,12 @@
                 <h1 class="main-title" th:utext="${username}"></h1>
 
                 <section>
-                    <p class="text"><span th:utext="${nbFound}"></span> 404 error found !</p>
+                    <h2 class="subtitle"><span th:utext="${nbFound} + (${nbFound} > 1 ? ' ' + pages : ' ' + page)"></span> found :</h2>
                     
-                    <ul>
-                        <li>Hello</li>
+                    <ul class="list-pages-found">
+                        <li th:each="page : ${pages}">
+                            <a th:href="${page}" class="pink-text text-darken-2" th:utext="${page}"></a>
+                        </li>
                     </ul>
 
                 </section>
