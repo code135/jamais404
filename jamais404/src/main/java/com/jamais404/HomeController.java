@@ -1,5 +1,8 @@
 package com.jamais404;
 
+import com.jamais404.models.*;
+import com.jamais404.repositories.*;
+
 import java.util.List;
 
 import org.springframework.stereotype.Controller;
@@ -8,9 +11,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.beans.factory.annotation.Autowired;
 
 @Controller
 public class HomeController {
+
+    @Autowired
+    private UserRepository userRepository;
 
 	/**
 	 * Home page
@@ -44,10 +51,13 @@ public class HomeController {
 	 */
 	@RequestMapping(value = "/user")
 	public String user(Model model, @RequestParam String username) {
-		
+        
+        User user = userRepository.findByName(username);
+        String name = user.getName();
+
         // TODO
 
-        model.addAttribute("active", "TODO");
+        model.addAttribute("active", name);
         
         List<String> pages = List.of(
             "page1",
@@ -55,7 +65,7 @@ public class HomeController {
             "page3"
         );
 
-		model.addAttribute("username", username);
+		model.addAttribute("username", "euuuuuuh");
         model.addAttribute("nbFound", pages.size());
         model.addAttribute("pages", pages);
 

@@ -13,6 +13,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 @Entity
 @Table(name = "pages")
 public class Page{
@@ -40,12 +42,14 @@ public class Page{
         name = "datetime",
         nullable = false
     )
+    @CreationTimestamp
     private Timestamp datetime;
 
     @OneToMany(mappedBy = "page")
     private Set<Comment> comments;
 
     // METHODS
+
     public Page() {}
 
     public long getId(){
