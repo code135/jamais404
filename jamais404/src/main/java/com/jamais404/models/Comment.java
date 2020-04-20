@@ -23,13 +23,13 @@ public class Comment {
 
     @ManyToOne
     @JoinColumn(
-        name = "commentId",
+        name = "userId",
         nullable = false)
     private User user;
 
-    @Column(name = "date",
+    @Column(name = "datetime",
     nullable = false)
-    private Timestamp date;
+    private Timestamp datetime;
 
     @Column(name = "name",
     nullable = false)
@@ -60,12 +60,12 @@ public class Comment {
         this.user = user;
     }
 
-    public Timestamp getDate() {
-        return date;
+    public Timestamp getDatetime() {
+        return datetime;
     }
 
-    public void setDate(Timestamp date) {
-        this.date = date;
+    public void setDatetime(Timestamp datetime) {
+        this.datetime = datetime;
     }
 
     public String getName() {

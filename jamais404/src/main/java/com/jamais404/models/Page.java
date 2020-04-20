@@ -23,10 +23,9 @@ public class Page{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-
     @ManyToOne
     @JoinColumn(
-        name = "pageId",
+        name = "userId",
         nullable = false
     )
     private User owner;
@@ -38,14 +37,13 @@ public class Page{
     private String name;
 
     @Column(
-        name = "date",
+        name = "datetime",
         nullable = false
     )
-    private Timestamp date;
+    private Timestamp datetime;
 
     @OneToMany(mappedBy = "page")
     private Set<Comment> comments;
-
 
     // METHODS
     public Page() {}
@@ -74,12 +72,12 @@ public class Page{
         this.name = name;
     }
 
-    public Timestamp getDate(){
-        return date;
+    public Timestamp getDatetime(){
+        return datetime;
     }
 
-    public void setDate(Timestamp date){
-        this.date = date;
+    public void setDatetime(Timestamp datetime){
+        this.datetime = datetime;
     }
 
     public Set<Comment> getComments(){
