@@ -20,7 +20,7 @@
                 <ul id="nav-mobile" class="right">
                     <li><a th:href="@{'user?username=' + ${active}}"><i class="material-icons">account_circle</i></a></li>
                     <li>
-                        <form method="POST" action="/logout">
+                        <form method="post" th:action="@{logout}">
                             <button type="submit"><i class="material-icons">exit_to_app</i></button>
                         </form>
                     </li>
@@ -33,16 +33,16 @@
         <div class="container">
             <div class="center">
 
-                <h1 class="main-title" th:utext="${url}"></h1>
+                <h1 class="main-title word-break" th:utext="${url}"></h1>
 
                 <section>
                     <p class="text">Well done, you have found a new 404 error !</p>
-                    <p class="text">This page is added to your <a th:href="@{'user?username=' + ${username}}" class="pink-text text-darken-2" th:utext="list"></a>.</p>
+                    <p class="text">This page is added to your <a th:href="@{'user?username=' + ${active}}" class="pink-text text-darken-2" th:utext="list"></a>.</p>
                 </section>
 
                 <h2 class="subtitle">Keep 404'ing</h2>
 
-                <form id="form-search-page" action="search" method="POST">
+                <form id="form-search-page" th:action="@{search}" method="post">
 
                     <div class="input-field">
                         <input id="search-input" name="query" type="text" class="validate" placeholder="Search URL..." autocomplete="off" required>
@@ -55,6 +55,12 @@
             </div>
         </div>
     </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (evt) => {
+            M.toast({ html: 'Good job !' })
+        })
+    </script>
 
     <footer></footer>
 

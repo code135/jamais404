@@ -1,42 +1,81 @@
 package com.jamais404;
 
+import com.jamais404.model.*;
+import com.jamais404.auth.repository.*;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.boot.web.servlet.error.ErrorController;
-import org.springframework.http.HttpStatus;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.beans.factory.annotation.Autowired;
 
 @Controller
 public class Handle404Controller implements ErrorController {
+
+    @Autowired
+    private UserRepository userRepository;
+
+    @Autowired
+    private PageRepository pageRepository;
 
     /**
      * Handles every route different from the ones registered in
      * the HomeController.
      * @param model
+     * @param request
      * @return
      */
     @RequestMapping("/error")
-    @ResponseStatus(HttpStatus.OK)
-    public String handleError(Model model) {
+    public String handleError(Model model, HttpServletRequest request, Authentication authentication) {
+        model.addAttribute("active", authentication.getName());
+
+        // Gets the URI that triggered the 404 error (to avoid /error)
+        String originalUri = request.getAttribute(RequestDispatcher.FORWARD_REQUEST_URI).toString();
+        model.addAttribute("url", originalUri);
+
+        Page page = pageRepository.findByName(originalUri);
         
-        //FIXME: temporary
-        boolean new404 = true;
+        if (page != null)
+        {
+            String ownerUsername = page.getOwner().getUsername();
+            String datetime = page.getDatetime().toString();
 
-        //FIXME: temporary
-        model.addAttribute("url", "/test");
-        model.addAttribute("username", "admin");
+            try {
+                //FIXME
+                Date date = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.'SSSZ'").parse(datetime);
+                datetime = new SimpleDateFormat("dd/MM/yyyy, Ka").format(date);
+            } catch (ParseException e) { }
+            
+            model.addAttribute("datetime", datetime);
 
-        // New 404 error found
-        if (new404) {
-            return "new404";
+            if (ownerUsername.equals(authentication.getName())) {
+                model.addAttribute("username", "you");
+                model.addAttribute("userLink", authentication.getName());
+            } else {
+                model.addAttribute("username", ownerUsername);
+                model.addAttribute("userLink", ownerUsername);
+            }
+            
+            // Already found 404 error
+            return "already_found404";
         }
 
-        //FIXME: temporary
-        model.addAttribute("datetime", "13.03.2020 11:06");
+        User owner = userRepository.findByUsername(authentication.getName());
 
-        // Already found 404 error
-        return "already_found404";
+        page = new Page();
+        page.setName(originalUri);
+        page.setOwner(owner);
+        pageRepository.save(page);
+
+        return "new404";
     }
 
     @Override

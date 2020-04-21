@@ -20,7 +20,7 @@
                 <ul id="nav-mobile" class="right">
                     <li><a th:href="@{'user?username=' + ${active}}"><i class="material-icons">account_circle</i></a></li>
                     <li>
-                        <form method="POST" action="/logout">
+                        <form method="post" th:action="@{logout}">
                             <button type="submit"><i class="material-icons">exit_to_app</i></button>
                         </form>
                     </li>
@@ -35,7 +35,7 @@
 
                 <h1 class="main-title">Jamais 404</h1>
 
-                <form id="form-search-page" action="search" method="POST">
+                <form id="form-search-page" th:action="@{search}" method="post">
 
                     <div class="input-field">
                         <input id="search-input" name="query" type="text" class="validate" placeholder="Search URL..." autocomplete="off" required>
