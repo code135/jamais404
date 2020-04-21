@@ -35,7 +35,7 @@
 
                 <h1 class="main-title">Jamais 404</h1>
 
-                <form id="form-search-page" action="search" method="POST">
+                <form id="form-search-page" th:action="@{search}" method="post">
 
                     <div class="input-field">
                         <input id="search-input" name="query" type="text" class="validate" placeholder="Search URL..." autocomplete="off" required>

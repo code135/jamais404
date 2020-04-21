@@ -36,12 +36,12 @@
                 <h1 class="main-title word-break" th:utext="${url}"></h1>
 
                 <section>
-                    <p class="text">This URL has been found by <a th:href="@{'user?username=' + ${username}}" class="pink-text text-darken-2" th:utext="${username}"></a> on <span th:utext="${datetime}"></span></p>
+                    <p class="text">This URL has been found by <a th:href="@{'user?username=' + ${userLink}}" class="pink-text text-darken-2" th:utext="${username}"></a> on <span th:utext="${datetime}"></span></p>
                 </section>
 
                 <h2 class="subtitle">Don't give up !</h2>
 
-                <form id="form-search-page" action="search" method="POST">
+                <form id="form-search-page" th:action="@{search}" method="post">
 
                     <div class="input-field">
                         <input id="search-input" name="query" type="text" class="validate" placeholder="Search URL..." autocomplete="off" required>
@@ -54,6 +54,12 @@
             </div>
         </div>
     </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (evt) => {
+            M.toast({ html: 'Page already found !' })
+        })
+    </script>
 
     <footer></footer>
 

@@ -3,15 +3,18 @@ package com.jamais404;
 import com.jamais404.model.*;
 import com.jamais404.auth.repository.*;
 
-import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 
 @Controller
 public class HomeController {
@@ -24,11 +27,8 @@ public class HomeController {
 	 * @return
 	 */
 	@RequestMapping(value = "/")
-	public String home(Model model) {
-        
-        //TODO
-
-        model.addAttribute("active", "TODO");
+	public String home(Model model, Authentication authentication) {
+        model.addAttribute("active", authentication.getName());
 
 		return "home";
 	}
@@ -37,9 +37,9 @@ public class HomeController {
 	 * Search form
 	 * @return
 	 */
-	@RequestMapping(value = "/search", method = RequestMethod.POST)
-	public ModelAndView search(@RequestParam String query) {
-		String redirectUrl = "redirect:/" + query;
+	@PostMapping(value = "/search")
+	public ModelAndView search(@RequestParam String query, Authentication authentication) {
+        String redirectUrl = "redirect:/" + query;
 		
 		return new ModelAndView(redirectUrl);
 	}
@@ -50,24 +50,21 @@ public class HomeController {
 	 * @return
 	 */
 	@RequestMapping(value = "/user")
-	public String user(Model model, @RequestParam String username) {
+	public String user(Model model, @RequestParam String username, Authentication authentication) {
+        model.addAttribute("active", authentication.getName());
         
         User user = userRepository.findByUsername(username);
-        String name = user.getUsername();
 
-        // TODO
-
-        model.addAttribute("active", name);
+        //FIXME: alphabetic order
+        Set<String> pagesNames = user.getPages()
+            .stream()
+            .parallel()
+            .map(p -> p.getName())
+            .collect(Collectors.toSet());
         
-        List<String> pages = List.of(
-            "page1",
-            "page2",
-            "page3"
-        );
-
-		model.addAttribute("username", "euuuuuuh");
-        model.addAttribute("nbFound", pages.size());
-        model.addAttribute("pages", pages);
+        model.addAttribute("username", username);
+        model.addAttribute("pages", pagesNames);
+        model.addAttribute("nbFound", pagesNames.size());
 
 		return "user";
 	}

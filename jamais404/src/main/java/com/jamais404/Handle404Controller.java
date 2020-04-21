@@ -3,10 +3,15 @@ package com.jamais404;
 import com.jamais404.model.*;
 import com.jamais404.auth.repository.*;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.boot.web.servlet.error.ErrorController;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,7 +34,9 @@ public class Handle404Controller implements ErrorController {
      * @return
      */
     @RequestMapping("/error")
-    public String handleError(Model model, HttpServletRequest request) {
+    public String handleError(Model model, HttpServletRequest request, Authentication authentication) {
+        model.addAttribute("active", authentication.getName());
+
         // Gets the URI that triggered the 404 error (to avoid /error)
         String originalUri = request.getAttribute(RequestDispatcher.FORWARD_REQUEST_URI).toString();
         model.addAttribute("url", originalUri);
@@ -38,19 +45,34 @@ public class Handle404Controller implements ErrorController {
         
         if (page != null)
         {
-            model.addAttribute("datetime", page.getDatetime());
-            model.addAttribute("username", page.getOwner().getUsername());
+            String ownerUsername = page.getOwner().getUsername();
+            String datetime = page.getDatetime().toString();
 
+            try {
+                //FIXME
+                Date date = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.'SSSZ'").parse(datetime);
+                datetime = new SimpleDateFormat("dd/MM/yyyy, Ka").format(date);
+            } catch (ParseException e) { }
+            
+            model.addAttribute("datetime", datetime);
+
+            if (ownerUsername.equals(authentication.getName())) {
+                model.addAttribute("username", "you");
+                model.addAttribute("userLink", authentication.getName());
+            } else {
+                model.addAttribute("username", ownerUsername);
+                model.addAttribute("userLink", ownerUsername);
+            }
+            
             // Already found 404 error
             return "already_found404";
         }
 
+        User owner = userRepository.findByUsername(authentication.getName());
+
         page = new Page();
         page.setName(originalUri);
-
-        long id = 1;
-        User user = userRepository.findById(id).get();
-        page.setOwner(user);
+        page.setOwner(owner);
         pageRepository.save(page);
 
         return "new404";
