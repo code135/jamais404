@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+    <title>Jamais404</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  
+    <!-- STYLES -->
+    <link rel="stylesheet" th:href="@{/css/app.css}">
+    <link rel="stylesheet" th:href="@{/css/materialize.min.css}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="nav-wrapper pink white-text">
+                <a href="/" class="left brand-logo">Jamais 404</a>
+                <ul id="nav-mobile" class="right"></ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <div class="center">
+
+                <h1 class="main-title">Register</h1>
+
+                <form id="form-register" th:action="@{registration}" method="POST" th:object="${user}">
+
+                    <div class="input-field">
+                        <label for="register-email">Email</label>
+                        <input id="register-email" type="email" th:field="*{email}" required>
+                        <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="red-text darken-2"></p>
+                    </div>
+
+                    <div class="input-field">
+                        <label for="register-username">Username</label>
+                        <input id="register-username" type="text" th:field="*{username}" required>
+                        <p th:if="${#fields.hasErrors('username')}" th:errors="*{username}" class="red-text darken-2"></p>
+                    </div>
+
+                    <div class="input-field">
+                        <label for="register-password">Password</label>
+                        <input id="register-password" type="password" required th:field="*{password}">
+                        <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="red-text darken-2"></p>
+                    </div>
+
+                    <div class="input-field">
+                        <label for="register-passwordConfirm">Confirm Password</label>
+                        <input id="register-passwordConfirm" type="password" required th:field="*{passwordConfirm}">
+                        <p th:if="${#fields.hasErrors('passwordConfirm')}" th:errors="*{passwordConfirm}" class="red-text darken-2"></p>
+                    </div>
+
+                    <button class="btn btn-large waves-effect waves-light deep-purple" type="submit">REGISTER</button>
+
+                </form>
+
+                <section>
+                    <p class="text"><a th:href="@{login}" class="pink-text text-darken-2">Already have an account ?</a></p>
+                </secton>
+
+            </div>
+        </div>
+    </main>
+
+    <footer></footer>
+
+    <!-- SCRIPTS -->
+    <script th:src="@{/js/materialize.min.js}"></script>
+
+</body>
+</html> 

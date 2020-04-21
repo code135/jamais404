@@ -1,7 +1,7 @@
 package com.jamais404;
 
-import com.jamais404.models.*;
-import com.jamais404.repositories.*;
+import com.jamais404.model.*;
+import com.jamais404.auth.repository.*;
 
 import java.util.List;
 
@@ -52,8 +52,8 @@ public class HomeController {
 	@RequestMapping(value = "/user")
 	public String user(Model model, @RequestParam String username) {
         
-        User user = userRepository.findByName(username);
-        String name = user.getName();
+        User user = userRepository.findByUsername(username);
+        String name = user.getUsername();
 
         // TODO
 

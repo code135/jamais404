@@ -1,4 +1,4 @@
-package com.jamais404.models;
+package com.jamais404.model;
 
 import java.sql.Timestamp;
 

@@ -1,6 +1,6 @@
-package com.jamais404.repositories;
+package com.jamais404.auth.repository;
 
-import com.jamais404.models.Comment;
+import com.jamais404.model.Comment;
 
 import org.springframework.data.repository.CrudRepository;
 

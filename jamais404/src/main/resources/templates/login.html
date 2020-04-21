@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+    <title>Jamais404</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  
+    <!-- STYLES -->
+    <link rel="stylesheet" th:href="@{/css/app.css}">
+    <link rel="stylesheet" th:href="@{/css/materialize.min.css}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="nav-wrapper pink white-text">
+                <a href="/" class="left brand-logo">Jamais 404</a>
+                <ul id="nav-mobile" class="right"></ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <div class="center">
+            
+                <h1 class="main-title">Log in</h1>
+
+                <form id="form-login" th:action="@{login}" method="POST">
+                
+                    <div class="input-field">
+                        <label for="login-username">Username</label>
+                        <input id="login-username" name="username" type="text" required>
+                    </div>
+
+                    <div class="input-field">
+                        <label for="login-password">Password</label>
+                        <input id="login-password" name="password" type="password" required>
+                    </div>
+
+                    <button class="btn btn-large waves-effect waves-light deep-purple" type="submit">LOG IN</button>
+                    
+                </form>
+
+                <section>
+                    <p class="text"><a th:href="@{registration}" class="pink-text text-darken-2">Don't have an account ? Create one !</a></p>
+                </secton>
+
+                <script th:if="${error != null}">
+                    document.addEventListener('DOMContentLoaded', (evt) => {
+                        M.toast({ html: 'Invalid login !' })
+                    })
+                </script>
+
+                <script th:if="${success != null}">
+                    document.addEventListener('DOMContentLoaded', (evt) => {
+                        M.toast({ html: 'You have been logged out successfully !' })
+                    })
+                </script>
+
+            </div>
+        </div>
+    </main>
+
+    <footer></footer>
+
+    <!-- SCRIPTS -->
+    <script th:src="@{/js/materialize.min.js}"></script>
+
+</body>
+</html> 

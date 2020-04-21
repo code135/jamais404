@@ -1,7 +1,7 @@
 package com.jamais404;
 
-import com.jamais404.models.*;
-import com.jamais404.repositories.*;
+import com.jamais404.model.*;
+import com.jamais404.auth.repository.*;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;
@@ -39,7 +39,7 @@ public class Handle404Controller implements ErrorController {
         if (page != null)
         {
             model.addAttribute("datetime", page.getDatetime());
-            model.addAttribute("username", page.getOwner().getName());
+            model.addAttribute("username", page.getOwner().getUsername());
 
             // Already found 404 error
             return "already_found404";
