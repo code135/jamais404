@@ -1,15 +1,10 @@
  pipeline {
+    agent any
     options {
         disableConcurrentBuilds()
     }
-    agent any
     stages {
-        stage('Echo Sample') {
-            steps {
-                echo "ECHO SAMPLE"
-                sh '(printenv)'
-            }
-        }
+
         stage('Build') {
             agent {
                 docker {
@@ -17,11 +12,12 @@
                 }
             }
             steps {
-                echo "Build"
+                echo 'Build'
                 sh '(cd ./jamais404/; mvn clean package)'
                 stash name: "app", includes: "**"
             }
         }
+
         stage('Test') {
             agent {
                 docker {
@@ -29,13 +25,25 @@
                 }
             }
             steps {
+                echo 'Test'
+                unstash 'app'
                 sh '(cd ./jamais404/; mvn test)'
             }
         }
+
         stage('Deploy') {
             steps {
                 echo "Deploy: TODO"
             }
+        }
+    }
+
+    post
+	{
+        always
+		{
+            echo 'Always clean up'
+            deleteDir()
         }
     }
 }
