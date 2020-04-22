@@ -13,7 +13,7 @@
             }
             steps {
                 echo 'Build'
-                sh '(cd ./jamais404/; mvn clean package)'
+                sh '(cd ./jamais404/; mvn clean package; ls -l)'
                 stash name: "app", includes: "**"
             }
         }
