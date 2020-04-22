@@ -26,7 +26,7 @@
             }
             steps {
                 echo 'Test'
-                unstash 'app'
+                unstash "app"
                 sh '(cd ./jamais404/; mvn test)'
             }
         }
