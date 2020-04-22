@@ -30,12 +30,6 @@
                 sh '(cd ./jamais404/; mvn test)'
             }
         }
-
-        stage('Deploy') {
-            steps {
-                echo "Deploy: TODO"
-            }
-        }
     }
 
     post
