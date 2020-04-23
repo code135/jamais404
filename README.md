@@ -19,10 +19,10 @@ Le but du projet est de créer une application web qui permet à l'utilisateur d
 * Comptes utilisateurs
 * Affichage des pages trouvées par utilisateur
 * Ajout de commentaires sur une page 404 déjà trouvée
-* Système de points (par page 404 trouvée)
-* Classement entre les différents utilisateurs
 
 ### Objectifs secondaires
 
+* Système de points (par page 404 trouvée)
+* Classement entre les différents utilisateurs
 * Système d'achat de nouveaux design de pages d'erreur 404 (contre des points)
 * Détection de l'utilisation de scripts automatisant la recherche d'erreurs 404
