@@ -38,7 +38,7 @@ public class HomeController {
 	 */
 	@PostMapping(value = "/search")
 	public ModelAndView search(@RequestParam String query, Authentication authentication) {
-        String redirectUrl = "redirect:/" + query;
+		String redirectUrl = "redirect:/" + query.replace("/", "");
 		
 		return new ModelAndView(redirectUrl);
 	}
