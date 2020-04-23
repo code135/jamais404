@@ -46,7 +46,7 @@
 
                     <ul class="comments">
                         <li th:each="comment : ${comments}">
-                            <p class="text comment-info"><a th:href="@{'user?username=' + ${comment.user.username}}" class="pink-text text-darken-2" th:utext="${comment.user.username + ' '}"></a><span th:utext="${comment.datetime}"></span></p>
+                            <p class="text comment-info"><a th:href="@{'user?username=' + ${comment.user.username}}" class="pink-text text-darken-2" th:utext="${comment.user.username + ' '}"></a><span class="datetime" th:utext="${comment.datetime}"></span></p>
                             <p class="text comment-text grey-text" th:utext="${comment.text}"></p>
                         </li>
                     </ul>
@@ -101,6 +101,23 @@
             if (msg.length > 0) {
                 M.toast({ html: msg })
             }
+        })
+    </script>
+        
+    <script>
+        document.addEventListener('DOMContentLoaded', (evt) => {
+            document.querySelectorAll('.datetime').forEach(datetime => {
+                // Formats the comments timestamps to more readable dates and times
+                let cutDatetime = datetime.innerHTML.match(/\S+/g) || []
+                let date = cutDatetime[0]
+                let time = cutDatetime[1]
+
+                date = date.split('-').reverse().join('.')
+                time = time.substring(0, time.indexOf('.'))
+                time = time.substring(0, time.length - 3)
+                
+                datetime.innerHTML = 'on ' + date + ' at ' + time
+            })
         })
     </script>
 

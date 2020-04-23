@@ -32,7 +32,6 @@ public class UserValidator implements Validator {
     public void validate(Object o, Errors errors) {
         User user = (User) o;
         
-
         // Email
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, EMAIL_STRING, NOT_EMPTY_STRING);
         Matcher matcher = VALID_EMAIL_ADDRESS_REGEX.matcher(user.getEmail());
