@@ -45,6 +45,7 @@ public class HomeController {
 	 */
 	@PostMapping(value = "/search")
 	public ModelAndView search(@RequestParam String query, Authentication authentication) {
+        // Trims the slashes ; they cause troubles with the URLs
 		String redirectUrl = "redirect:/" + query.replace("/", "");
 		
 		return new ModelAndView(redirectUrl);
@@ -61,6 +62,7 @@ public class HomeController {
         
         User user = userRepository.findByUsername(username);
 
+        // Fetches the user pages names (sorted by alphabetical order)
         Set<String> pagesNames = user.getPages()
             .stream()
             .parallel()
@@ -79,8 +81,10 @@ public class HomeController {
 	public ModelAndView comment(Model model, @RequestParam String text, @RequestParam String url, Authentication authentication) {
         User user = userRepository.findByUsername(authentication.getName());
         Page page = pageRepository.findByName(url);
+        // If the user has modified the HTML or JS before submitting a comment
         String msg = "Do not modify the code !";
 
+        // The page must exist (be found) in order to add a comment to it
         if (page != null) {
             Comment comment = new Comment();
             comment.setText(text);
@@ -91,6 +95,7 @@ public class HomeController {
             msg = "Comment added !";
         }
         
+        // Refreshes the page and shows a message in a toast
         String redirectUrl = "redirect:" + url + "?msg=" + msg;
 		
 		return new ModelAndView(redirectUrl);
