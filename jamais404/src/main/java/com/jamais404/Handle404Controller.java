@@ -73,7 +73,7 @@ public class Handle404Controller implements ErrorController {
             List<Comment> comments = page.getComments()
                 .stream()
                 .parallel()
-                //.map(Comment::getText)
+                .sorted((c1, c2) -> - c1.getDatetime().compareTo(c2.getDatetime()))
                 .collect(Collectors.toList());
             
             model.addAttribute("comments", comments);
