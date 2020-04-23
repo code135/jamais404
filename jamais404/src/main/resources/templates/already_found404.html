@@ -46,7 +46,7 @@
 
                     <ul class="comments">
                         <li th:each="comment : ${comments}">
-                            <p class="text comment-info"><a th:href="@{'user?username=' + ${comment.user.username}}" class="pink-text text-darken-2" th:utext="${comment.user.username}"></a><span th:utext="${comment.datetime}"></span></p>
+                            <p class="text comment-info"><a th:href="@{'user?username=' + ${comment.user.username}}" class="pink-text text-darken-2" th:utext="${comment.user.username + ' '}"></a><span th:utext="${comment.datetime}"></span></p>
                             <p class="text comment-text grey-text" th:utext="${comment.text}"></p>
                         </li>
                     </ul>

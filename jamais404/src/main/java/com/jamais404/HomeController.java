@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 
@@ -62,11 +61,11 @@ public class HomeController {
         
         User user = userRepository.findByUsername(username);
 
-        //FIXME: alphabetic order
         Set<String> pagesNames = user.getPages()
             .stream()
             .parallel()
             .map(Page::getName)
+            .sorted(String::compareTo)
             .collect(Collectors.toSet());
         
         model.addAttribute("username", username);

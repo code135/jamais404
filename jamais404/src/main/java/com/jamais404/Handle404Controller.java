@@ -52,9 +52,9 @@ public class Handle404Controller implements ErrorController {
         if (page != null) {
             String ownerUsername = page.getOwner().getUsername();
             Timestamp datetime = page.getDatetime();
-            String StringDatetime = TimeStampTools.timeStampToString(datetime);
+            String stringDatetime = TimeStampTools.timeStampToString(datetime);
             
-            model.addAttribute("datetime", StringDatetime);
+            model.addAttribute("datetime", stringDatetime);
 
             if (ownerUsername.equals(authentication.getName())) {
                 model.addAttribute("username", "you");
