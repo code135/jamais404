@@ -18,6 +18,13 @@
             }
         }
 
+        stage('SonarCloud') {
+            steps {
+                unstash "app"
+                sh '(cd ./jamais404/; mvn sonar:sonar'
+            }
+        }
+
         stage('Test') {
             agent {
                 docker {

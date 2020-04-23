@@ -1,0 +1,41 @@
+
+dcom.jamais404.auth.web.UserController#registration(Lorg/springframework/ui/Model;)Ljava/lang/String;Å
+w/Users/qtipee/Documents/HES/Bachelor_3/JEE/jamais404/jamais404/src/main/java/com/jamais404/auth/web/UserController.java ("startingBlock*Ô
+startingBlockÅ
+w/Users/qtipee/Documents/HES/Bachelor_3/JEE/jamais404/jamais404/src/main/java/com/jamais404/auth/web/UserController.java (+US
+
+__unknown_file (%
+modelorg.springframework.ui.Model"java.lang.Object*
+1*¬	
+1Å
+w/Users/qtipee/Documents/HES/Bachelor_3/JEE/jamais404/jamais404/src/main/java/com/jamais404/auth/web/UserController.java (¡æ
+Å
+w/Users/qtipee/Documents/HES/Bachelor_3/JEE/jamais404/jamais404/src/main/java/com/jamais404/auth/web/UserController.java' (+
+%0com.jamais404.model.User"com.jamais404.model.User”
+–
+Å
+w/Users/qtipee/Documents/HES/Bachelor_3/JEE/jamais404/jamais404/src/main/java/com/jamais404/auth/web/UserController.java# (-
+%1""com.jamais404.model.User#<init>()V* 
+
+%0com.jamais404.model.Userä
+á
+Å
+w/Users/qtipee/Documents/HES/Bachelor_3/JEE/jamais404/jamais404/src/main/java/com/jamais404/auth/web/UserController.java (."
+%2org.springframework.ui.Model"__mapSet*'
+%
+modelorg.springframework.ui.Model*
+user* 
+
+%0com.jamais404.model.User¯
+ı
+Å
+w/Users/qtipee/Documents/HES/Bachelor_3/JEE/jamais404/jamais404/src/main/java/com/jamais404/auth/web/UserController.java   (
+%3"template!registration*)"'
+%com.jamais404.auth.web.UserController*'
+%
+modelorg.springframework.ui.Model"ñ
+Å
+w/Users/qtipee/Documents/HES/Bachelor_3/JEE/jamais404/jamais404/src/main/java/com/jamais404/auth/web/UserController.java   (
+registration:%
+modelorg.springframework.ui.ModelB)'
+%com.jamais404.auth.web.UserController

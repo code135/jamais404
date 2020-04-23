@@ -1,0 +1,7 @@
+organization=code135
+projectKey=code135_jamais404
+serverUrl=https://sonarcloud.io
+serverVersion=8.0.0.7133
+dashboardUrl=https://sonarcloud.io/dashboard?id=code135_jamais404
+ceTaskId=AXGmE0qaIGSkDNTQpXEo
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AXGmE0qaIGSkDNTQpXEo
