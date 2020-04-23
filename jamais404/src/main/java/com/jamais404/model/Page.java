@@ -50,8 +50,6 @@ public class Page{
 
     // METHODS
 
-    public Page() {}
-
     public long getId(){
         return id;
     }

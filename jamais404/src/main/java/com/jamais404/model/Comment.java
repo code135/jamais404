@@ -42,8 +42,6 @@ public class Comment {
 
     // METHODS
 
-    public Comment() {}
-
     public long getId() {
         return id;
     }

@@ -8,9 +8,8 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +25,7 @@ public class HomeController {
 	 * Home page
 	 * @return
 	 */
-	@RequestMapping(value = "/")
+	@GetMapping(value = "/")
 	public String home(Model model, Authentication authentication) {
         model.addAttribute("active", authentication.getName());
 
@@ -49,7 +48,7 @@ public class HomeController {
 	 * @param model
 	 * @return
 	 */
-	@RequestMapping(value = "/user")
+	@GetMapping(value = "/user")
 	public String user(Model model, @RequestParam String username, Authentication authentication) {
         model.addAttribute("active", authentication.getName());
         
@@ -59,7 +58,7 @@ public class HomeController {
         Set<String> pagesNames = user.getPages()
             .stream()
             .parallel()
-            .map(p -> p.getName())
+            .map(Page::getName)
             .collect(Collectors.toSet());
         
         model.addAttribute("username", username);
