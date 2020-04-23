@@ -42,7 +42,6 @@ public class User {
     private Set<Page> ownedPages;
 
     // METHODS
-    public User() {}
 
     public long getId(){
         return id;
