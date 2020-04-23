@@ -81,3 +81,13 @@ form .btn {
 .list-pages-found > li {
     padding: 0.2em 0;
 }
+
+.comments > li {
+    padding: 0.5em 0;
+}
+.comment-info {
+    font-size: 1em;
+}
+.comment-text {
+    font-style: italic;
+}

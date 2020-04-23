@@ -1,17 +1,0 @@
-
-=com.jamais404.model.Comment#getDatetime()Ljava/sql/Timestamp;w
-m/Users/qtipee/Documents/HES/Bachelor_3/JEE/jamais404/jamais404/src/main/java/com/jamais404/model/Comment.java? ?( "1*â
-1w
-m/Users/qtipee/Documents/HES/Bachelor_3/JEE/jamais404/jamais404/src/main/java/com/jamais404/model/Comment.java@ @(Ë
-È
-w
-m/Users/qtipee/Documents/HES/Bachelor_3/JEE/jamais404/jamais404/src/main/java/com/jamais404/model/Comment.java@ @(
-%0java.sql.Timestamp"__id*-*+
-com.jamais404.model.Comment"
-
-datetime"•
-w
-m/Users/qtipee/Documents/HES/Bachelor_3/JEE/jamais404/jamais404/src/main/java/com/jamais404/model/Comment.java@ @(
-
-%0java.sql.TimestampB
-com.jamais404.model.Comment

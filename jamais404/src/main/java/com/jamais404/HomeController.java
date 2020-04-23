@@ -1,6 +1,7 @@
 package com.jamais404;
 
 import com.jamais404.model.*;
+import com.jamais404.repository.*;
 import com.jamais404.auth.repository.*;
 
 import java.util.Set;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 
@@ -20,6 +22,12 @@ public class HomeController {
 
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private PageRepository pageRepository;
+
+    @Autowired
+    private CommentRepository commentRepository;
 
 	/**
 	 * Home page
@@ -66,5 +74,26 @@ public class HomeController {
         model.addAttribute("nbFound", pagesNames.size());
 
 		return "user";
+    }
+    
+    @PostMapping(value = "/comment")
+	public ModelAndView comment(Model model, @RequestParam String text, @RequestParam String url, Authentication authentication) {
+        User user = userRepository.findByUsername(authentication.getName());
+        Page page = pageRepository.findByName(url);
+        String msg = "Do not modify the code !";
+
+        if (page != null) {
+            Comment comment = new Comment();
+            comment.setText(text);
+            comment.setUser(user);
+            comment.setPage(page);
+            commentRepository.save(comment);
+
+            msg = "Comment added !";
+        }
+        
+        String redirectUrl = "redirect:" + url + "?msg=" + msg;
+		
+		return new ModelAndView(redirectUrl);
 	}
 }
