@@ -1,78 +1,0 @@
-
-Åcom.jamais404.auth.web.UserController#login(Lorg/springframework/ui/Model;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;Å
-w/Users/qtipee/Documents/HES/Bachelor_3/JEE/jamais404/jamais404/src/main/java/com/jamais404/auth/web/UserController.java2 2("startingBlock*¶
-2Å
-w/Users/qtipee/Documents/HES/Bachelor_3/JEE/jamais404/jamais404/src/main/java/com/jamais404/auth/web/UserController.java7 7(ó
-î
-Å
-w/Users/qtipee/Documents/HES/Bachelor_3/JEE/jamais404/jamais404/src/main/java/com/jamais404/auth/web/UserController.java7 7(S"
-%1org.springframework.ui.Model"__mapSet*'
-%
-modelorg.springframework.ui.Model*	
-success**(
-&You have been logged out successfully.*
-1*œ
-startingBlockÅ
-w/Users/qtipee/Documents/HES/Bachelor_3/JEE/jamais404/jamais404/src/main/java/com/jamais404/auth/web/UserController.java2 2(AÓ
-Î
-Å
-w/Users/qtipee/Documents/HES/Bachelor_3/JEE/jamais404/jamais404/src/main/java/com/jamais404/auth/web/UserController.java1 1(
-%3"
-__annotate*64
-2org.springframework.web.bind.annotation.GetMapping*
-
-errorjava.lang.String∏
-µ
-Å
-w/Users/qtipee/Documents/HES/Bachelor_3/JEE/jamais404/jamais404/src/main/java/com/jamais404/auth/web/UserController.java2, 2(1
-errorjava.lang.String"__annotation*
-
-%3Ô
-Ï
-Å
-w/Users/qtipee/Documents/HES/Bachelor_3/JEE/jamais404/jamais404/src/main/java/com/jamais404/auth/web/UserController.java1 1(
-%4"
-__annotate*64
-2org.springframework.web.bind.annotation.GetMapping*
-
-logoutjava.lang.Stringπ
-∂
-Å
-w/Users/qtipee/Documents/HES/Bachelor_3/JEE/jamais404/jamais404/src/main/java/com/jamais404/auth/web/UserController.java2: 2(@
-logoutjava.lang.String"__annotation*
-
-%4US
-
-__unknown_file (%
-modelorg.springframework.ui.Model"java.lang.Object*	
-2
-4
-1*ê
-4Å
-w/Users/qtipee/Documents/HES/Bachelor_3/JEE/jamais404/jamais404/src/main/java/com/jamais404/auth/web/UserController.java4 4(˛
-˚
-Å
-w/Users/qtipee/Documents/HES/Bachelor_3/JEE/jamais404/jamais404/src/main/java/com/jamais404/auth/web/UserController.java4 4(:"
-%0org.springframework.ui.Model"__mapSet*'
-%
-modelorg.springframework.ui.Model*	
-error*
-Invalid login !*
-2
-1*ç
-1Å
-w/Users/qtipee/Documents/HES/Bachelor_3/JEE/jamais404/jamais404/src/main/java/com/jamais404/auth/web/UserController.java9 9(Ò
-Ó
-Å
-w/Users/qtipee/Documents/HES/Bachelor_3/JEE/jamais404/jamais404/src/main/java/com/jamais404/auth/web/UserController.java9 9(
-%2"template!login*)"'
-%com.jamais404.auth.web.UserController*'
-%
-modelorg.springframework.ui.Model"è
-Å
-w/Users/qtipee/Documents/HES/Bachelor_3/JEE/jamais404/jamais404/src/main/java/com/jamais404/auth/web/UserController.java9 9(	
-login:%
-modelorg.springframework.ui.Model:
-errorjava.lang.String:
-logoutjava.lang.StringB)'
-%com.jamais404.auth.web.UserController

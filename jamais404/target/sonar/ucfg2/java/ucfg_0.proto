@@ -1,53 +1,0 @@
-
-…com.jamais404.HomeController#home(Lorg/springframework/ui/Model;Lorg/springframework/security/core/Authentication;)Ljava/lang/String;x
-n/Users/qtipee/Documents/HES/Bachelor_3/JEE/jamais404/jamais404/src/main/java/com/jamais404/HomeController.java ("startingBlock*Ó
-startingBlockx
-n/Users/qtipee/Documents/HES/Bachelor_3/JEE/jamais404/jamais404/src/main/java/com/jamais404/HomeController.java (?‘
-Ž
-x
-n/Users/qtipee/Documents/HES/Bachelor_3/JEE/jamais404/jamais404/src/main/java/com/jamais404/HomeController.java (
-%3"
-__annotate*:8
-6org.springframework.web.bind.annotation.RequestMapping*D
-B
-authentication0org.springframework.security.core.Authentication×
-Ô
-x
-n/Users/qtipee/Documents/HES/Bachelor_3/JEE/jamais404/jamais404/src/main/java/com/jamais404/HomeController.java0 (>B
-authentication0org.springframework.security.core.Authentication"__annotation*
-
-%3US
-
-__unknown_file (%
-modelorg.springframework.ui.Model"java.lang.Object*
-1*ÿ
-1x
-n/Users/qtipee/Documents/HES/Bachelor_3/JEE/jamais404/jamais404/src/main/java/com/jamais404/HomeController.java (›˜
-x
-n/Users/qtipee/Documents/HES/Bachelor_3/JEE/jamais404/jamais404/src/main/java/com/jamais404/HomeController.java% (=
-%0java.lang.String"3java.security.Principal#getName()Ljava/lang/String;*D
-B
-authentication0org.springframework.security.core.Authentication2	getName()ú
-÷
-x
-n/Users/qtipee/Documents/HES/Bachelor_3/JEE/jamais404/jamais404/src/main/java/com/jamais404/HomeController.java (>"
-%1org.springframework.ui.Model"__mapSet*'
-%
-modelorg.springframework.ui.Model*
-
-active*
-
-%0java.lang.StringÝ
-Ú
-x
-n/Users/qtipee/Documents/HES/Bachelor_3/JEE/jamais404/jamais404/src/main/java/com/jamais404/HomeController.java!	 !(
-%2"template!home* "
-com.jamais404.HomeController*'
-%
-modelorg.springframework.ui.Model"„
-x
-n/Users/qtipee/Documents/HES/Bachelor_3/JEE/jamais404/jamais404/src/main/java/com/jamais404/HomeController.java! !(
-home:%
-modelorg.springframework.ui.Model:B
-authentication0org.springframework.security.core.AuthenticationB 
-com.jamais404.HomeController

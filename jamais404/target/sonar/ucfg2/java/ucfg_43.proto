@@ -1,33 +1,0 @@
-
-Gcom.jamais404.auth.validator.UserValidator#supports(Ljava/lang/Class;)Z†
-|/Users/qtipee/Documents/HES/Bachelor_3/JEE/jamais404/jamais404/src/main/java/com/jamais404/auth/validator/UserValidator.java ("startingBlock*³
-startingBlock†
-|/Users/qtipee/Documents/HES/Bachelor_3/JEE/jamais404/jamais404/src/main/java/com/jamais404/auth/validator/UserValidator.java (,Ó
-Ð
-†
-|/Users/qtipee/Documents/HES/Bachelor_3/JEE/jamais404/jamais404/src/main/java/com/jamais404/auth/validator/UserValidator.java (
-%1"
-__annotate*
-java.lang.Override*
-
-aClassjava.lang.Class½
-º
-†
-|/Users/qtipee/Documents/HES/Bachelor_3/JEE/jamais404/jamais404/src/main/java/com/jamais404/auth/validator/UserValidator.java% (+
-aClassjava.lang.Class"__annotation*
-
-%1*
-1*­
-1†
-|/Users/qtipee/Documents/HES/Bachelor_3/JEE/jamais404/jamais404/src/main/java/com/jamais404/auth/validator/UserValidator.java (Š‡
-†
-|/Users/qtipee/Documents/HES/Bachelor_3/JEE/jamais404/jamais404/src/main/java/com/jamais404/auth/validator/UserValidator.java ((
-%0boolean",java.lang.Object#equals(Ljava/lang/Object;)Z*
-""*
-
-aClassjava.lang.Class2equals(Ljava/lang/Object;)"‘
-†
-|/Users/qtipee/Documents/HES/Bachelor_3/JEE/jamais404/jamais404/src/main/java/com/jamais404/auth/validator/UserValidator.java ()
-"":
-aClassjava.lang.ClassB.,
-*com.jamais404.auth.validator.UserValidator

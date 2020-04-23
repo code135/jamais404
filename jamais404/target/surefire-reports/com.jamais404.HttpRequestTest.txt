@@ -1,7 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.jamais404.HttpRequestTest
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.017 s <<< FAILURE! - in com.jamais404.HttpRequestTest
-initializationError  Time elapsed: 0.011 s  <<< ERROR!
-java.lang.Exception: No runnable methods
-

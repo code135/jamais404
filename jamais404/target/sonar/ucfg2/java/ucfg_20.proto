@@ -1,45 +1,0 @@
-
-Wcom.jamais404.auth.service.SecurityServiceImpl#findLoggedInUsername()Ljava/lang/String;‹
-€/Users/qtipee/Documents/HES/Bachelor_3/JEE/jamais404/jamais404/src/main/java/com/jamais404/auth/service/SecurityServiceImpl.java (&"3*õ
-2‹
-€/Users/qtipee/Documents/HES/Bachelor_3/JEE/jamais404/jamais404/src/main/java/com/jamais404/auth/service/SecurityServiceImpl.java! (,¶³
-‹
-€/Users/qtipee/Documents/HES/Bachelor_3/JEE/jamais404/jamais404/src/main/java/com/jamais404/auth/service/SecurityServiceImpl.java (;
-%3java.lang.String"Yorg.springframework.security.core.userdetails.UserDetails#getUsername()Ljava/lang/String;*!
-
-userDetailsjava.lang.Object2getUsername()"¨
-‹
-€/Users/qtipee/Documents/HES/Bachelor_3/JEE/jamais404/jamais404/src/main/java/com/jamais404/auth/service/SecurityServiceImpl.java (<
-
-%3java.lang.String*ü
-3‹
-€/Users/qtipee/Documents/HES/Bachelor_3/JEE/jamais404/jamais404/src/main/java/com/jamais404/auth/service/SecurityServiceImpl.java (2¡
-ž
-‹
-€/Users/qtipee/Documents/HES/Bachelor_3/JEE/jamais404/jamais404/src/main/java/com/jamais404/auth/service/SecurityServiceImpl.java (??
-%09org.springframework.security.core.context.SecurityContext"‡org.springframework.security.core.context.SecurityContextHolder#getContext()Lorg/springframework/security/core/context/SecurityContext;*C"A
-?org.springframework.security.core.context.SecurityContextHolder¢Ÿ
-‹
-€/Users/qtipee/Documents/HES/Bachelor_3/JEE/jamais404/jamais404/src/main/java/com/jamais404/auth/service/SecurityServiceImpl.java (S6
-%10org.springframework.security.core.Authentication"org.springframework.security.core.context.SecurityContext#getAuthentication()Lorg/springframework/security/core/Authentication;*A
-?
-%09org.springframework.security.core.context.SecurityContext2getAuthentication()Â¿
-‹
-€/Users/qtipee/Documents/HES/Bachelor_3/JEE/jamais404/jamais404/src/main/java/com/jamais404/auth/service/SecurityServiceImpl.java (`
-%2java.lang.Object"Oorg.springframework.security.core.Authentication#getDetails()Ljava/lang/Object;*8
-6
-%10org.springframework.security.core.Authentication2getDetails()Ò
-Ï
-‹
-€/Users/qtipee/Documents/HES/Bachelor_3/JEE/jamais404/jamais404/src/main/java/com/jamais404/auth/service/SecurityServiceImpl.java (a
-userDetailsjava.lang.Object"__id*
-
-%2java.lang.Object*
-2
-1*ª
-1‹
-€/Users/qtipee/Documents/HES/Bachelor_3/JEE/jamais404/jamais404/src/main/java/com/jamais404/auth/service/SecurityServiceImpl.java   ("–
-‹
-€/Users/qtipee/Documents/HES/Bachelor_3/JEE/jamais404/jamais404/src/main/java/com/jamais404/auth/service/SecurityServiceImpl.java   (
-""B20
-.com.jamais404.auth.service.SecurityServiceImpl

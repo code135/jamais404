@@ -1,109 +1,0 @@
-
-écom.jamais404.auth.web.UserController#registration(Lcom/jamais404/model/User;Lorg/springframework/validation/BindingResult;)Ljava/lang/String;Å
-w/Users/qtipee/Documents/HES/Bachelor_3/JEE/jamais404/jamais404/src/main/java/com/jamais404/auth/web/UserController.java$ $("startingBlock*†
-2Å
-w/Users/qtipee/Documents/HES/Bachelor_3/JEE/jamais404/jamais404/src/main/java/com/jamais404/auth/web/UserController.java( ((!"ñ
-Å
-w/Users/qtipee/Documents/HES/Bachelor_3/JEE/jamais404/jamais404/src/main/java/com/jamais404/auth/web/UserController.java( (("
-registration*è	
-3Å
-w/Users/qtipee/Documents/HES/Bachelor_3/JEE/jamais404/jamais404/src/main/java/com/jamais404/auth/web/UserController.java% %(˝
-˙
-Å
-w/Users/qtipee/Documents/HES/Bachelor_3/JEE/jamais404/jamais404/src/main/java/com/jamais404/auth/web/UserController.java% %(0
-%0*com.jamais404.auth.validator.UserValidator"__id*<*:'
-%com.jamais404.auth.web.UserController"
-userValidator‚ﬂ
-Å
-w/Users/qtipee/Documents/HES/Bachelor_3/JEE/jamais404/jamais404/src/main/java/com/jamais404/auth/web/UserController.java% %(3
-
-%1void"ocom.jamais404.auth.validator.UserValidator#validate(Ljava/lang/Object;Lorg/springframework/validation/Errors;)V*2
-0
-%0*com.jamais404.auth.validator.UserValidator*"
- 
-usercom.jamais404.model.User*?
-=
-bindingResult,org.springframework.validation.BindingResult2Cvalidate(Ljava/lang/Object;Lorg/springframework/validation/Errors;)òï
-Å
-w/Users/qtipee/Documents/HES/Bachelor_3/JEE/jamais404/jamais404/src/main/java/com/jamais404/auth/web/UserController.java' '(%
-%2boolean"2org.springframework.validation.Errors#hasErrors()Z*?
-=
-bindingResult,org.springframework.validation.BindingResult2hasErrors()*
-2
-1*π
-startingBlockÅ
-w/Users/qtipee/Documents/HES/Bachelor_3/JEE/jamais404/jamais404/src/main/java/com/jamais404/auth/web/UserController.java$ $(Mˆ
-Û
-Å
-w/Users/qtipee/Documents/HES/Bachelor_3/JEE/jamais404/jamais404/src/main/java/com/jamais404/auth/web/UserController.java# #(!
-%9"
-__annotate*75
-3org.springframework.web.bind.annotation.PostMapping*"
- 
-usercom.jamais404.model.User⁄
-◊
-Å
-w/Users/qtipee/Documents/HES/Bachelor_3/JEE/jamais404/jamais404/src/main/java/com/jamais404/auth/web/UserController.java$ $(%
-%10"
-__annotate*
-javax.validation.Valid*"
- 
-usercom.jamais404.model.User»
-≈
-Å
-w/Users/qtipee/Documents/HES/Bachelor_3/JEE/jamais404/jamais404/src/main/java/com/jamais404/auth/web/UserController.java$+ $(/ 
-usercom.jamais404.model.User"__annotation*
-
-%9*
-
-%10*
-3*®
-1Å
-w/Users/qtipee/Documents/HES/Bachelor_3/JEE/jamais404/jamais404/src/main/java/com/jamais404/auth/web/UserController.java+ +(˜
-Ù
-Å
-w/Users/qtipee/Documents/HES/Bachelor_3/JEE/jamais404/jamais404/src/main/java/com/jamais404/auth/web/UserController.java+ +(,
-%3&com.jamais404.auth.service.UserService"__id*:*8'
-%com.jamais404.auth.web.UserController"
-userService”–
-Å
-w/Users/qtipee/Documents/HES/Bachelor_3/JEE/jamais404/jamais404/src/main/java/com/jamais404/auth/web/UserController.java+ +(
-
-%4void"Hcom.jamais404.auth.service.UserService#save(Lcom/jamais404/model/User;)V*.
-,
-%3&com.jamais404.auth.service.UserService*"
- 
-usercom.jamais404.model.User2 save(Lcom/jamais404/model/User;)ˇ
-¸
-Å
-w/Users/qtipee/Documents/HES/Bachelor_3/JEE/jamais404/jamais404/src/main/java/com/jamais404/auth/web/UserController.java, ,(0
-%5*com.jamais404.auth.service.SecurityService"__id*>*<'
-%com.jamais404.auth.web.UserController"
-securityServiceåâ
-Å
-w/Users/qtipee/Documents/HES/Bachelor_3/JEE/jamais404/jamais404/src/main/java/com/jamais404/auth/web/UserController.java," ,(4
-%6java.lang.String"8com.jamais404.model.User#getUsername()Ljava/lang/String;*"
- 
-usercom.jamais404.model.User2getUsername()öó
-Å
-w/Users/qtipee/Documents/HES/Bachelor_3/JEE/jamais404/jamais404/src/main/java/com/jamais404/auth/web/UserController.java,6 ,(O
-%7java.lang.String"?com.jamais404.model.User#getPasswordConfirm()Ljava/lang/String;*"
- 
-usercom.jamais404.model.User2getPasswordConfirm()âÜ
-Å
-w/Users/qtipee/Documents/HES/Bachelor_3/JEE/jamais404/jamais404/src/main/java/com/jamais404/auth/web/UserController.java, ,(P
-
-%8void"[com.jamais404.auth.service.SecurityService#autoLogin(Ljava/lang/String;Ljava/lang/String;)V*2
-0
-%5*com.jamais404.auth.service.SecurityService*
-
-%6java.lang.String*
-
-%7java.lang.String2/autoLogin(Ljava/lang/String;Ljava/lang/String;)"î
-Å
-w/Users/qtipee/Documents/HES/Bachelor_3/JEE/jamais404/jamais404/src/main/java/com/jamais404/auth/web/UserController.java. .(
-
-redirect:/: 
-usercom.jamais404.model.User:=
-bindingResult,org.springframework.validation.BindingResultB)'
-%com.jamais404.auth.web.UserController
