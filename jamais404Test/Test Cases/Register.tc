@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>We'll test the register</description>
+   <name>Register</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>b277bf43-ab03-4f71-af6e-76c160d3df26</testCaseGuid>
+</TestCaseEntity>
