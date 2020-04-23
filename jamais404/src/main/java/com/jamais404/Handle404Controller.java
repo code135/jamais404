@@ -1,11 +1,10 @@
 package com.jamais404;
 
 import com.jamais404.model.*;
+import com.jamais404.tools.TimeStampTools;
 import com.jamais404.auth.repository.*;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.sql.Timestamp;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;
@@ -27,8 +26,8 @@ public class Handle404Controller implements ErrorController {
     private PageRepository pageRepository;
 
     /**
-     * Handles every route different from the ones registered in
-     * the HomeController.
+     * Handles every route different from the ones registered in the HomeController.
+     * 
      * @param model
      * @param request
      * @return
@@ -42,19 +41,13 @@ public class Handle404Controller implements ErrorController {
         model.addAttribute("url", originalUri);
 
         Page page = pageRepository.findByName(originalUri);
-        
-        if (page != null)
-        {
-            String ownerUsername = page.getOwner().getUsername();
-            String datetime = page.getDatetime().toString();
 
-            try {
-                //FIXME
-                Date date = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.'SSSZ'").parse(datetime);
-                datetime = new SimpleDateFormat("dd/MM/yyyy, Ka").format(date);
-            } catch (ParseException e) { }
+        if (page != null) {
+            String ownerUsername = page.getOwner().getUsername();
+            Timestamp datetime = page.getDatetime();
+            String StringDatetime = TimeStampTools.timeStampToString(datetime);
             
-            model.addAttribute("datetime", datetime);
+            model.addAttribute("datetime", StringDatetime);
 
             if (ownerUsername.equals(authentication.getName())) {
                 model.addAttribute("username", "you");
