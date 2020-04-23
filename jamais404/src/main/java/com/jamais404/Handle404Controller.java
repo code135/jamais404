@@ -45,9 +45,10 @@ public class Handle404Controller implements ErrorController {
 
         // Gets the URI that triggered the 404 error (to avoid /error)
         String originalUri = request.getAttribute(RequestDispatcher.FORWARD_REQUEST_URI).toString();
-        model.addAttribute("url", originalUri);
+        String parsedUri = originalUri.replace("/", "");
+        model.addAttribute("url", parsedUri);
 
-        Page page = pageRepository.findByName(originalUri);
+        Page page = pageRepository.findByName(parsedUri);
 
         if (page != null) {
             String ownerUsername = page.getOwner().getUsername();
@@ -82,7 +83,7 @@ public class Handle404Controller implements ErrorController {
         User owner = userRepository.findByUsername(authentication.getName());
 
         page = new Page();
-        page.setName(originalUri);
+        page.setName(parsedUri);
         page.setOwner(owner);
         pageRepository.save(page);
 
