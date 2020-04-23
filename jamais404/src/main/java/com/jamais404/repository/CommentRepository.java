@@ -1,4 +1,4 @@
-package com.jamais404.auth.repository;
+package com.jamais404.repository;
 
 import com.jamais404.model.Comment;
 

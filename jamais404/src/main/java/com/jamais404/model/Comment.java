@@ -11,6 +11,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 @Entity
 @Table(name = "comments")
 public class Comment {
@@ -29,11 +31,12 @@ public class Comment {
 
     @Column(name = "datetime",
     nullable = false)
+    @CreationTimestamp
     private Timestamp datetime;
 
-    @Column(name = "name",
+    @Column(name = "text",
     nullable = false)
-    private String name;
+    private String text;
 
     @ManyToOne
     @JoinColumn(name = "pageId",
@@ -68,12 +71,12 @@ public class Comment {
         this.datetime = datetime;
     }
 
-    public String getName() {
-        return name;
+    public String getText() {
+        return text;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setText(String text) {
+        this.text = text;
     }
 
     public Page getPage(){
