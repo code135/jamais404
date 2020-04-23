@@ -41,6 +41,35 @@
                     <p class="text">This URL has been found by <a th:href="@{'user?username=' + ${userLink}}" class="pink-text text-darken-2" th:utext="${username}"></a> on <span th:utext="${datetime}"></span></p>
                 </section>
 
+                <section>
+                    <h2 class="subtitle">Comments</h2>
+
+                    <ul class="comments">
+                        <li th:each="comment : ${comments}">
+                            <p class="text comment-info"><a th:href="@{'user?username=' + ${comment.user.username}}" class="pink-text text-darken-2" th:utext="${comment.user.username}"></a><span th:utext="${comment.datetime}"></span></p>
+                            <p class="text comment-text grey-text" th:utext="${comment.text}"></p>
+                        </li>
+                    </ul>
+
+                </section>
+
+                    <form id="form-comment" th:action="@{comment}" method="post">
+
+                        <div class="input-field">
+                            <label for="input-comment">Add a comment...</label>
+                            <textarea id="input-comment" name="text" class="materialize-textarea" required></textarea>
+                        </div>
+
+                        <input name="url" hidden required th:value="${url}">
+
+                        <button class="btn btn-large waves-effect waves-light blue" type="submit">COMMENT</button>
+
+                    </form>
+
+                <section>
+
+                </section>
+
                 <h2 class="subtitle">Don't give up !</h2>
 
                 <form id="form-search-page" th:action="@{search}" method="post">
@@ -57,9 +86,21 @@
         </div>
     </main>
 
+    <span id="msg" th:utext="${msg}" hidden></span>
+
     <script>
         document.addEventListener('DOMContentLoaded', (evt) => {
             M.toast({ html: 'Page already found !' })
+        })
+    </script>
+
+    <script th:if="${msg != null}">
+        document.addEventListener('DOMContentLoaded', (evt) => {
+            let msg = document.querySelector('#msg').innerHTML;
+            
+            if (msg.length > 0) {
+                M.toast({ html: msg })
+            }
         })
     </script>
 
